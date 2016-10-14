@@ -71,7 +71,7 @@ angular.module("ReviewApp",['pascalprecht.translate'])
 		console.log(index);
 		if ($scope.count==0)
 		{
-			$scope.rev1="empty";
+			$scope.rev1=false;
 			$scope.rev1date="";
 		}	
 		else
@@ -81,7 +81,7 @@ angular.module("ReviewApp",['pascalprecht.translate'])
 		}
 		if (index+1>$scope.count-1)
 		{
-			$scope.rev2="empty";
+			$scope.rev2=false;
 			$scope.rev2date="";
 		}
 		else

@@ -1,12 +1,12 @@
 
-<p ng-hide="rev1=='empty'">
+<div ng-show="rev1">
 	<div>{{rev1.review}}</div>
 	<div>{{ "by" | translate }}{{rev1.name}} @ {{rev1date}}</div>
-</p>
-<p ng-hide="rev2=='empty'">
+</div>
+<div ng-show="rev2">
 	<div>{{rev2.review}}</div>
 	<div>{{ "by" | translate }}{{rev2.name}} @ {{rev2date}}</div>
-</p>
+</div>
 
 <div id="paginatrix">
 	<span ng-repeat="n in reviews track by $index" ng-show="count>2">
