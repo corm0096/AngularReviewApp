@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>ReviewApp</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-translate.min.js"></script>
+	<script src="js/handler.js"></script>
+</head>
+	
+
+<body ng-app="ReviewApp">
+<div id="fullpage">
+	<div id="header" ng-controller="HeaderCtrl">
+		<p ng-show="lang == undefined">Pick a language
+		 	 <a href="" ng-click="setlang('en')">English</a>
+			 <a href="" ng-click="setlang('fr')">Francais</a></p>
+			 <div ng-show="lang!=undefined">
+				<p><span ng-show="lang != undefined" translate="heading"></span>
+				<a href="" ng-click="toglang()" translate="clicker"></a></p>
+			</div>
+	</div>
+
+
+	<div ng-controller="MainCtrl">
+		<div>{{ "nick" | translate}} &nbsp;<input id="nick" type="text" ng-model="nickname" maxlength="30" /></div>
+
+		<div> {{ "review" | translate}}&nbsp;<textarea rows="3" id="review" type="text" ng-model="reviewText" maxlength="255"></textarea> <span ng-hide="reviewText==undefined||reviewText.length==0">&nbsp;({{reviewText.length}})</span></div>
+		
+		<button id="submit" ng-disabled="nickname==undefined || nickname.length==0 || reviewText.length==0 || reviewText==undefined || count>10" ng-click="saveReview()">Submit</button>
+		<div id="titlespace"><span id="title">{{ "title" | translate }}</span> <div id="sorter"><select  ng-model="sort" ng-options="list.text for list in order" ng-change="sortChanged()"></select></div></div>
+		
+		<div ng-include="'reviews.html'"></div>
+	</div>
+</div>
+</body>
+</html>
+

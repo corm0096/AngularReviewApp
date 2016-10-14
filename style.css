@@ -1,0 +1,32 @@
+#fullpage
+{
+	width: 500px;
+	margin: 0 auto;
+}
+
+#header
+{
+	text-align: right;
+}
+
+#title
+{
+	font-size: 150%;
+}
+
+#titlespace
+{
+		margin-top: 1.5em;
+}
+
+#sorter
+{
+	text-align: right;
+	font-size: 100%;
+}
+
+
+#paginatrix
+{
+	text-align: right;
+}
